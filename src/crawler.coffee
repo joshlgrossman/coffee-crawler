@@ -10,7 +10,7 @@ find = ({body}) ->
   urls = []
   for a in $('a')
     href = $(a).attr('href')
-    if not DOMAIN.test(href) and href not in urls then urls.push href
+    if DOMAIN.test(href) and href not in urls then urls.push href
   return urls
 
 filter = (domain, urls) ->
